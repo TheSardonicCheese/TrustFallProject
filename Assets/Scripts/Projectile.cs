@@ -25,7 +25,7 @@ public class Projectile : MonoBehaviour
 
         MoveBullet();
 
-        Collider[] hits = Physics.OverlapSphere(transform.position, radius, layer);
+        /*Collider[] hits = Physics.OverlapSphere(transform.position, radius, layer);
 
         if (hits.Length > 0)
         {
@@ -44,7 +44,7 @@ public class Projectile : MonoBehaviour
                         //respawn player
                     }
             }
-        }
+        }*/
 
     }
     void MoveBullet()
@@ -58,5 +58,9 @@ public class Projectile : MonoBehaviour
             transform.Translate(Vector3.up * projectileSpeed * Time.deltaTime);
         }
     }
-
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log(col.name);
+        col.transform.position = GameObject.FindGameObjectWithTag("RespawnPoint").transform.position;
+    }
 }

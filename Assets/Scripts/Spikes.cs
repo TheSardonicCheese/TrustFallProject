@@ -14,5 +14,11 @@ public class Spikes : MonoBehaviour
     void Update()
     {
         
+        //destroy anything that colides should be the same as arrow and spikes
+    }
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log(col.name);
+        col.transform.position = GameObject.FindGameObjectWithTag("RespawnPoint").transform.position;
     }
 }

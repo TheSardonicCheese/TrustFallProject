@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int lives =5;
+    public int lives = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,4 +16,5 @@ public class PlayerStats : MonoBehaviour
     {
         
     }
+    
 }
