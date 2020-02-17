@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6672284581066489877}
   - component: {fileID: 6672284581066489876}
   - component: {fileID: 6672284581066489867}
-  - component: {fileID: -5198100962341012276}
+  - component: {fileID: 2581116413534861880}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -120,7 +120,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-5198100962341012276
+--- !u!114 &2581116413534861880
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,7 +129,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6672284581066489866}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d41bc7e9fb1c584cbaabbf43292be49, type: 3}
+  m_Script: {fileID: 11500000, guid: d56810f223952f84f9cb596255b9eecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 5
+  Speed: 5
+  onGround: 0
+  player: {fileID: 6672284581066489866}
+  JumpNo: 0

@@ -6,13 +6,12 @@ public class PlayerMovement : MonoBehaviour
 {
     public float Speed = 5f;
     public bool onGround = false;
-    GameObject Player;
-    int JumpNo;
-    public void DoubleJump;
+    public GameObject player;
+    public int JumpNo;
     // Start is called before the first frame update
     void Start()
     {
-        Player = gameObject.transform.tag.gameObject;
+        
 
         JumpNo = 0;
     }
@@ -33,21 +32,25 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
+    void DoubleJump()
+    {
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    }
+
+    void OnCollisionEnter2D (Collision2D collision)
     {
         if (collision.collider.tag == "Player")
         {
-            Player.GetComponent<PlayerMovement>().onGround = true;
+            player.GetComponent<PlayerMovement>().onGround = true;
         }
     }
 
 
-    private void OnCollisionExit2D(Collision2D collision)
+    void OnCollisionExit2D (Collision2D collision)
     {
         if (collision.collider.tag == "Player")
         {
-            Player.GetComponent<PlayerMovement>().onGround = false;
+            player.GetComponent<PlayerMovement>().onGround = false;
         }
     }
 }
