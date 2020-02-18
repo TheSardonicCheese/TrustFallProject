@@ -5,6 +5,7 @@ using UnityEngine;
 public class Smasher : MonoBehaviour
 {
     public float timer;
+    public float delay;
     public Vector3 target;
     public Vector3 returnPos;
     public Vector3 startPos;
@@ -18,7 +19,7 @@ public class Smasher : MonoBehaviour
     {
         returnPos = returnPoint.transform.position;
         target = targetPoint.transform.position;
-        StartCoroutine(Countdown());
+        StartCoroutine(StartDelay());
     }
 
     // Update is called once per frame
@@ -41,6 +42,12 @@ public class Smasher : MonoBehaviour
         //when time is over move smasher
         //destroy anything that colides should be the same as arrow and spikes
     }
+    public IEnumerator StartDelay()
+    {
+        yield return new WaitForSeconds(delay);
+        StartCoroutine(Countdown());
+    }
+
     public IEnumerator Countdown()
     {
         yield return new WaitForSeconds(timer);

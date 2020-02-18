@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63613307e65ea1f4ea94e7c1aab6aaed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 15
+  projectileSpeed: 20
   rb: {fileID: 0}
   maxProjectileDist: 50
   layer:

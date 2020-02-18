@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 6672284581066489877}
   - component: {fileID: 6672284581066489876}
   - component: {fileID: 6672284581066489867}
-  - component: {fileID: 2581116413534861880}
+  - component: {fileID: 722167527782013726}
+  - component: {fileID: -5198100962341012276}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,7 +121,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2581116413534861880
+--- !u!114 &722167527782013726
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,5 +135,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 5
   onGround: 0
-  player: {fileID: 6672284581066489866}
+  player: {fileID: 0}
   JumpNo: 0
+--- !u!114 &-5198100962341012276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6672284581066489866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d41bc7e9fb1c584cbaabbf43292be49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 5
