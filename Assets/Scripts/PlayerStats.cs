@@ -6,6 +6,11 @@ public class PlayerStats : MonoBehaviour
 {
     public int lives = 5;
     // Start is called before the first frame update
+    public enum difficulty
+    {
+        hard,
+        easy
+    }
     void Start()
     {
         
