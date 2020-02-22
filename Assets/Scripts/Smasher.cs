@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Smasher : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Smasher : MonoBehaviour
     private bool smash = false;
     public GameObject returnPoint;
     public GameObject targetPoint;
+    public PlayerStats player;
 
 
     void Start()
@@ -20,6 +22,7 @@ public class Smasher : MonoBehaviour
         returnPos = returnPoint.transform.position;
         target = targetPoint.transform.position;
         StartCoroutine(StartDelay());
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
     }
 
     // Update is called once per frame
@@ -55,7 +58,17 @@ public class Smasher : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log(col.name);
-        col.transform.position = GameObject.FindGameObjectWithTag("RespawnPoint").transform.position;
+        if (player.lives > 0)
+        {
+            Debug.Log(col.name);
+            col.transform.position = GameObject.FindGameObjectWithTag("RespawnPoint").transform.position;
+            player.lives -= 1;
+        }
+        else
+        {
+            Debug.Log("Game Over");
+            SceneManager.LoadScene("Difficulty Selector");
+        }
+
     }
 }
