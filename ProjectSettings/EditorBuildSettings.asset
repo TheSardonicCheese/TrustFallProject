@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Difficulty Selector.unity
     guid: 8bce630534a183e409f31c79895df2e0
+  - enabled: 1
+    path: Assets/Rohith Levels/RLevel 1.unity
+    guid: 6ca9cf52e40a47742ba693b956e05099
+  - enabled: 1
+    path: Assets/Rohith Levels/RLevel 8.unity
+    guid: d8e1764a0bdff864a9e22d62796ad3e7
   m_configObjects: {}

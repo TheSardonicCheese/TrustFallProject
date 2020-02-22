@@ -1,9 +1,5 @@
 sceneSetups:
-<<<<<<< Updated upstream
-- path: Assets/Rohith Levels/Level 10.unity
-=======
-- path: Assets/Rohith Levels/Level 5.unity
->>>>>>> Stashed changes
+- path: Assets/Scenes/Difficulty Selector.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

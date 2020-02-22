@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AI : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int Lives = 10;
     void Start()
     {
         //gets player stats
