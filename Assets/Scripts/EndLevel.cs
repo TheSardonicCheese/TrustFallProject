@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class EndLevel : MonoBehaviour
 {
     // Start is called before the first frame update
-    private void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter2D(Collider2D col)
     {
-        if(collision.gameObject.tag == "Player")
+        if(col.gameObject.tag == "Player")
         {
             SceneManager.LoadScene("Difficulty Selector");
         }

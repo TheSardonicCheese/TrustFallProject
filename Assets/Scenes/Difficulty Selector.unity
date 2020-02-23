@@ -314,7 +314,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 184, y: -14}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 200, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &586318883
 MonoBehaviour:
@@ -420,6 +420,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Ai: {fileID: 0}
   playerSelection: 
+  previousChoice: 0
+  difficulty: 0
   Exp: []
   LivesDisp: []
   Images: []
@@ -492,7 +494,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: HARD
+  m_Text: Give hard level
 --- !u!222 &874738879
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -569,7 +571,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: EASY
+  m_Text: Give easy level
 --- !u!222 &958796683
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -616,7 +618,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -269, y: -14}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 200, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1143366947
 MonoBehaviour:
@@ -722,6 +724,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Ai: {fileID: 0}
   playerSelection: 
+  previousChoice: 0
+  difficulty: 0
   Exp: []
   LivesDisp: []
   Images: []
@@ -894,6 +898,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Ai: {fileID: 0}
   playerSelection: 
+  previousChoice: 0
+  difficulty: 0
   Exp:
   - {fileID: 5867025310058982678, guid: 1d508de5abb69494caf29865f7119810, type: 3}
   - {fileID: -1985119340831843599, guid: 1d508de5abb69494caf29865f7119810, type: 3}

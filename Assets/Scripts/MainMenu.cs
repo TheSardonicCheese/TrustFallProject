@@ -20,6 +20,6 @@ public class MainMenu : MonoBehaviour
 
     public void travel()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("Difficulty Selector");
     }
 }

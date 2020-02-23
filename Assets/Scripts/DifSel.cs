@@ -15,49 +15,105 @@ public class DifSel : MonoBehaviour
 
     public AI Ai;
     public  string playerSelection = "Easy";
+    public int previousChoice = 0;
+    public int difficulty;
 
     public Sprite[] Exp;
     public Text[] LivesDisp;
     public Image[] Images;
     public int livesAi = 10;
 
-    void Awake()
+    /*void Awake()
     {
 
         DontDestroyOnLoad(this);
+        
+            
+        }
+    }*/
+    private void Start()
+    {
+        //load player prefs level selection
+        //set Ai's choice = player pref
+        difficulty = PlayerPrefs.GetInt("previousChoice");
+        livesAi = PlayerPrefs.GetInt("livesAi");
+        if (difficulty == 0)
+        {
+            livesAi -= Random.Range(0, 1);
+        }
+        else
+        {
+            livesAi -= Random.Range(2, 3);
+        }
+
         if (livesAi <= 10 && livesAi > 7)
         {
             LivesDisp[0].text = livesAi.ToString();
             Images[0].sprite = Exp[0];
-            
+
         }
-        else if(livesAi <=6 && livesAi > 5)
+        else if (livesAi <= 6 && livesAi > 5)
         {
             LivesDisp[0].text = livesAi.ToString();
             Images[0].sprite = Exp[1];
-            
+
         }
-        else if(livesAi <=4 && livesAi >= 2)
+        else if (livesAi <= 4 && livesAi >= 2)
         {
             LivesDisp[0].text = livesAi.ToString();
-            Images[0].sprite = Exp[2];  
+            Images[0].sprite = Exp[2];
         }
-        else if(livesAi <= 1 )
+        else if (livesAi <= 1)
         {
             LivesDisp[0].text = livesAi.ToString();
             Images[0].sprite = Exp[4];
-            
+        }
+        Debug.Log("livesAi = " + livesAi);
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown("r"))
+        {
+            PlayerPrefs.DeleteAll();
+            livesAi = 10;
+            Debug.Log("livesAi = " + livesAi);
+            difficulty = 0;
+            Debug.Log("difficulty = " + difficulty);
+
         }
     }
-
     public void Easyselection()
     {
-        SceneManager.LoadScene("RLevel 1");
+        //save choice for next time
+        PlayerPrefs.SetInt("previousChoice", 0);
         playerSelection = "Easy";
+        //load level
+        PlayerPrefs.SetInt("livesAi", livesAi);
+        if (difficulty == 0)
+        {
+            SceneManager.LoadScene("LLevel10");
+        }
+        else
+        {
+            SceneManager.LoadScene("LLevel7");
+        }
+
     }
     public void Hardselection()
     {
-        SceneManager.LoadScene("RLevel 8");
+        PlayerPrefs.SetInt("previousChoice", 1);
         playerSelection = "Hard";
+        //load level
+        PlayerPrefs.SetInt("livesAi", livesAi);
+        if (difficulty == 0)
+        {
+            SceneManager.LoadScene("LLevel10");
+        }
+        else
+        {
+            SceneManager.LoadScene("LLevel7");
+        }
+        
     }
+    
 }
