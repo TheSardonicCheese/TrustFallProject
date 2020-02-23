@@ -905,7 +905,7 @@ MonoBehaviour:
   - {fileID: 1924121032}
   Images:
   - {fileID: 135997193}
-  livesAi: 2
+  livesAi: 10
 --- !u!1 &1607696534
 GameObject:
   m_ObjectHideFlags: 0

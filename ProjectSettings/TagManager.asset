@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Easy
   - Hard
+  - AI
   layers:
   - Default
   - TransparentFX

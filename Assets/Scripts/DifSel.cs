@@ -12,11 +12,6 @@ public class DifSel : MonoBehaviour
     //public List<GameObject> Easy = new List<GameObject>(GameObject.FindGameObjectsWithTag("Easy"));
 
     // Start is called before the first frame update
-    public enum Difficulty
-    {
-        Hard,
-        Easy
-    }
 
     public AI Ai;
     public  string playerSelection = "Easy";
@@ -28,7 +23,8 @@ public class DifSel : MonoBehaviour
 
     void Awake()
     {
-        
+
+        DontDestroyOnLoad(this);
         if (livesAi <= 10 && livesAi > 7)
         {
             LivesDisp[0].text = livesAi.ToString();
@@ -44,22 +40,16 @@ public class DifSel : MonoBehaviour
         else if(livesAi <=4 && livesAi >= 2)
         {
             LivesDisp[0].text = livesAi.ToString();
-            Images[0].sprite = Exp[2];
-            
+            Images[0].sprite = Exp[2];  
         }
-        else if(livesAi == 1)
-        {
-            LivesDisp[0].text = livesAi.ToString();
-            Images[0].sprite = Exp[3];
-            
-        }
-        else if(livesAi <= 0 )
+        else if(livesAi <= 1 )
         {
             LivesDisp[0].text = livesAi.ToString();
             Images[0].sprite = Exp[4];
             
         }
     }
+
     public void Easyselection()
     {
         SceneManager.LoadScene("RLevel 1");
