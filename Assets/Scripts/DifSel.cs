@@ -39,11 +39,11 @@ public class DifSel : MonoBehaviour
         livesAi = PlayerPrefs.GetInt("livesAi");
         if (difficulty == 0)
         {
-            livesAi -= Random.Range(0, 1);
+            livesAi -= Random.Range(0, 2);
         }
         else
         {
-            livesAi -= Random.Range(2, 3);
+            livesAi -= Random.Range(2, 4);
         }
 
         if (livesAi <= 10 && livesAi > 7)

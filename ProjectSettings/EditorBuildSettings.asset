@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Luke Levels/LLevel7.unity
     guid: 68bc786702d21204abef3b8034862948
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: e016ecf366d81264a9f0b5b2f6a8d5a1
   m_configObjects: {}
