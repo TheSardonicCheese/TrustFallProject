@@ -24,7 +24,7 @@ public class PlayerStats : MonoBehaviour
         {
             PlayerPrefs.SetInt("previousChoice", 0);
             PlayerPrefs.SetInt("livesAi", 10);
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("PlayerDies");
         }
 
     }

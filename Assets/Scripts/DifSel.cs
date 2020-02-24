@@ -52,13 +52,13 @@ public class DifSel : MonoBehaviour
             Images[0].sprite = Exp[0];
 
         }
-        else if (livesAi <= 6 && livesAi > 5)
+        else if (livesAi <= 7 && livesAi > 5)
         {
             LivesDisp[0].text = livesAi.ToString();
             Images[0].sprite = Exp[1];
 
         }
-        else if (livesAi <= 4 && livesAi >= 2)
+        else if (livesAi <= 5 && livesAi >= 2)
         {
             LivesDisp[0].text = livesAi.ToString();
             Images[0].sprite = Exp[2];
@@ -81,6 +81,7 @@ public class DifSel : MonoBehaviour
             Debug.Log("difficulty = " + difficulty);
 
         }
+
     }
     public void Easyselection()
     {
@@ -91,11 +92,11 @@ public class DifSel : MonoBehaviour
         PlayerPrefs.SetInt("livesAi", livesAi);
         if (difficulty == 0)
         {
-            SceneManager.LoadScene("LLevel10");
+            SceneManager.LoadScene(Random.Range(3,13));
         }
         else
         {
-            SceneManager.LoadScene("LLevel7");
+            SceneManager.LoadScene(Random.Range(13, 23));
         }
 
     }
@@ -107,11 +108,11 @@ public class DifSel : MonoBehaviour
         PlayerPrefs.SetInt("livesAi", livesAi);
         if (difficulty == 0)
         {
-            SceneManager.LoadScene("LLevel10");
+            SceneManager.LoadScene(Random.Range(3, 13));
         }
         else
         {
-            SceneManager.LoadScene("LLevel7");
+            SceneManager.LoadScene(Random.Range(13,23));
         }
         
     }

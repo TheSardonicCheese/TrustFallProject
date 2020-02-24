@@ -102,6 +102,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   radius: 1
   damage: 1
+  player: {fileID: 0}
 --- !u!58 &7266929722085182775
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -115,6 +116,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.09}
   serializedVersion: 2
-  m_Radius: 0.16000004
+  m_Radius: 0.06
