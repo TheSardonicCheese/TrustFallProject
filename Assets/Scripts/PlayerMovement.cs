@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
 
         JumpNo = 0;
     }
@@ -26,31 +26,41 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
-        if (Input.GetButtonDown("Jump") && onGround == true)
+        if (Input.GetButtonDown("Jump") && onGround == true || Input.GetButtonDown("Jump") && JumpNo <= 1)
         {
+
+
+            Vector2 CurrentVelocity = gameObject.GetComponent<Rigidbody2D>().velocity;
+            CurrentVelocity.y = 0f;
+            gameObject.GetComponent<Rigidbody2D>().velocity = CurrentVelocity;
+            // gameObject.GetComponent<Rigidbody2D>().velocity.y = (gameObject.GetComponent<Rigidbody2D>().velocity.x,0)
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 5f), ForceMode2D.Impulse);
+            JumpNo++;
+
         }
-        
+
     }
     void DoubleJump()
     {
 
     }
 
-    void OnCollisionEnter2D (Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Player")
+        if (collision.collider.tag == "Ground")
         {
-            player.GetComponent<PlayerMovement>().onGround = true;
+            onGround = true;
+            JumpNo = 0;
         }
     }
 
 
-    void OnCollisionExit2D (Collision2D collision)
+    void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Player")
+        if (collision.collider.tag == "Ground")
         {
-            player.GetComponent<PlayerMovement>().onGround = false;
+            onGround = false;
+            
         }
     }
 }
