@@ -22,6 +22,10 @@ public class DifSel : MonoBehaviour
     public Text[] LivesDisp;
     public Image[] Images;
     public int livesAi = 10;
+    List<int> easyLevels = new List<int>() { 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+    List<int> hardLevels = new List<int>() { 13, 14, 15, 16, 17, 18, 19, 20, 21, 22 };
+    public int levelNum;
+
 
     /*void Awake()
     {
@@ -35,7 +39,11 @@ public class DifSel : MonoBehaviour
     {
         //load player prefs level selection
         //set Ai's choice = player pref
+        
+        
         difficulty = PlayerPrefs.GetInt("previousChoice");
+
+
         livesAi = PlayerPrefs.GetInt("livesAi");
         if (difficulty == 0)
         {
@@ -92,11 +100,17 @@ public class DifSel : MonoBehaviour
         PlayerPrefs.SetInt("livesAi", livesAi);
         if (difficulty == 0)
         {
-            SceneManager.LoadScene(Random.Range(3,13));
+            levelNum = Random.Range(easyLevels[0],easyLevels.Count);
+            Debug.Log(levelNum);
+            easyLevels.Remove(levelNum);
+            SceneManager.LoadScene(levelNum);
         }
         else
         {
-            SceneManager.LoadScene(Random.Range(13, 23));
+            levelNum = Random.Range(hardLevels[0], hardLevels.Count);
+            Debug.Log(levelNum);
+            hardLevels.Remove(levelNum);
+            SceneManager.LoadScene(levelNum);
         }
 
     }
@@ -108,11 +122,15 @@ public class DifSel : MonoBehaviour
         PlayerPrefs.SetInt("livesAi", livesAi);
         if (difficulty == 0)
         {
-            SceneManager.LoadScene(Random.Range(3, 13));
+            levelNum = Random.Range(easyLevels[0], easyLevels.Count);
+            easyLevels.Remove(levelNum);
+            SceneManager.LoadScene(levelNum);
         }
         else
         {
-            SceneManager.LoadScene(Random.Range(13,23));
+            levelNum = Random.Range(hardLevels[0], hardLevels.Count);
+            hardLevels.Remove(levelNum);
+            SceneManager.LoadScene(levelNum);
         }
         
     }
